@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/sentmessage_status"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginBottom="19dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="center"
+        tools:ignore="RtlHardcoded" />
+
+    <RelativeLayout
+        android:id="@+id/sentmessage_imageholder"
+        android:layout_width="53dp"
+        android:layout_height="53dp"
+        android:layout_toRightOf="@id/sentmessage_status"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        >
+        <invalid.showme.layoutobjects.SquareImageView
+            android:id="@+id/sentmessage_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+        <ProgressBar
+            android:id="@+id/sentmessage_loadingIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:layout_centerInParent="true"
+            style="@android:style/Widget.ProgressBar.Small"/>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/sentmessage_privateimageicon"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignTop="@id/sentmessage_imageholder"
+        android:layout_alignRight="@id/sentmessage_imageholder"
+        android:paddingRight="15px"
+        android:paddingTop="15px"
+        android:src="@drawable/sunglasses"
+        tools:ignore="RtlHardcoded,RtlSymmetry" />
+
+    <TextView
+        android:id="@+id/sentmessage_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_toRightOf="@id/sentmessage_imageholder"
+        android:gravity="center_vertical"
+        android:text="Example application"
+        android:textSize="16sp"
+        tools:ignore="RtlHardcoded" />
+    <TextView
+        android:id="@+id/sentmessage_senttime"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/sentmessage_imageholder"
+        android:layout_below="@id/sentmessage_name"
+        android:gravity="center_vertical"
+        android:text="Example application"
+        android:textSize="16sp"
+        tools:ignore="RtlHardcoded" />
+
+</RelativeLayout>

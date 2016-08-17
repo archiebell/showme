@@ -1,0 +1,3 @@
+[submodule "libaxolotl-java"]
+	path = libaxolotl-java
+	url = git@github.com:archiebell/libaxolotl-java.git

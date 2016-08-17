@@ -1,0 +1,44 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="invalid.showme.activities.friendslist.FriendsListActivity">
+
+    <item android:id="@+id/action_add_friend"
+        android:icon="@drawable/ic_add_white_48dp"
+        android:title="@string/action_add_friend"
+        app:showAsAction="ifRoom" />
+
+    <!--
+    <item android:id="@+id/action_search"
+        android:icon="@drawable/ic_search_white_48dp"
+        android:title="@string/action_search"
+        app:showAsAction="ifRoom" />
+    -->
+    <item android:id="@+id/action_sentmessages"
+        android:icon="@drawable/ic_send_white_48dp"
+        android:title="Sent Messages"
+        app:showAsAction="ifRoom" />
+    <item android:id="@+id/action_settings"
+        android:title="Settings"
+        android:orderInCategory="89"
+        app:showAsAction="never" />
+
+    <!-- Debug Tools
+    <item android:id="@+id/action_reregister"
+        android:title="Re-Register"
+        android:orderInCategory="91"
+        app:showAsAction="never" />
+    <item android:id="@+id/action_testbug"
+        android:title="File Test Bug"
+        android:orderInCategory="92"
+        app:showAsAction="never" />
+    <item android:id="@+id/action_cleandirectory"
+        android:title="Clean Directory"
+        android:orderInCategory="92"
+        app:showAsAction="never" />
+    <item android:id="@+id/action_reprocessthumbs"
+        android:title="Reprocess Thumbnails"
+        android:orderInCategory="93"
+        app:showAsAction="never" />
+    -->
+</menu>

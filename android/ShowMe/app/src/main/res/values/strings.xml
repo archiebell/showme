@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">Show Me!</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- Setup -->
+    <string name="setup_title">Let\'s Set Up Your Account!</string>
+    <string name="setup_enter_name">Display Name:</string>
+    <string name="button_setup_ok">OK!</string>
+    <string name="button_setup_doitforme">Fill In My Name</string>
+
+    <!-- Taking Photos -->
+    <string name="takephoto_error_nocamera">No camera found?</string>
+    <string name="takephoto_error_nodir">Could not prepare space for photo</string>
+
+    <!-- Sending Photos -->
+    <string name="message_error_encoding">Could not encode message for sending</string>
+    <string name="message_sending">Sending message…</string>
+
+    <!-- Other Photo Things -->
+    <string name="title_activity_viw_photo" />
+    <string name="action_delete_photo">Delete this photo?</string>
+
+    <!-- Drafts -->
+    <string name="title_activity_choose_draft">Choose Draft</string>
+    <string name="draft_saved">Saved draft.</string>
+    <string name="action_delete_draft">Delete this draft?</string>
+
+    <!-- Friends List -->
+    <string name="title_activity_friends_list">Friends List</string>
+    <string name="addfriend_scan">Scan Your Friend</string>
+    <string name="addfriend_getscanned">Get Scanned</string>
+    <string name="addfriend_error_scanning">Error scanning friend</string>
+
+    <!-- Choose Recipient -->
+    <string name="title_activity_choose_recipient">Choose Recipient</string>
+
+    <!-- Sent Messages -->
+    <string name="title_activity_sentmessages">Sent Messages</string>
+    <string name="action_delete_sentphoto">Delete this sent message?</string>
+
+    <!-- Settings -->
+    <string name="title_activity_settings">Settings</string>
+    <string name="pref_tor_title">Use Tor</string>
+    <string name="pref_tor_description">Route all requests through Tor using Orbot</string>
+    <string name="pref_privacypleaseicons_title">Hide previews of private photos</string>
+    <string name="pref_privacypleaseicons_description">When disabled, shows a slightly blurred preview of the private photo. When enabled, shows a \"Privacy Please\" icon. </string>
+    <string name="pref_builtincamera_title">Use built-in camera</string>
+    <string name="pref_builtincamera_description">Certain phones (e.g. HTC) will save photos taken with the default camera to the gallery. When enabled, use a safe camera to be certain photos are not saved elsewhere. When disabled, use a third-party camera app.</string>
+    <string name="pref_savesentmessages_title">Save Sent Messages</string>
+    <string name="pref_savesentmessages_description">Save non-private messages into a sent folder and enable you to check if they have been received.</string>
+    <string name="pref_saveprivatemessages_title">Save Sent Private Messages</string>
+    <string name="pref_saveprivatemessages_description">Save private messages into the sent folder.</string>
+
+    <!-- Menus -->
+    <string name="action_search">Search</string>
+    <string name="action_add_friend">Add Friend</string>
+    <string name="action_delete_friend">Delete this friend?</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_advanced_setup">Advanced</string>
+    <string name="title_activity_view_friend">ViewFriend</string>
+
+</resources>

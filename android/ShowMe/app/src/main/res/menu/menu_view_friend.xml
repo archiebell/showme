@@ -1,0 +1,10 @@
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="invalid.showme.activities.viewfriend.ViewFriend">
+
+    <item android:id="@+id/action_settings"
+        android:title="Settings"
+        android:orderInCategory="89"
+        app:showAsAction="never" />
+</menu>

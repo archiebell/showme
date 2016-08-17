@@ -1,0 +1,33 @@
+[Server]
+appport: 8082
+bugport: 8083
+
+# File format: ASCII PEM Certificate followed by Private Key
+appsslcert: /tmp/cert.pem
+bugsslcert: /tmp/cert.pem
+
+# openssl dhparam -out dh2048.pem 2048
+dhparams: /tmp/dh2048.pem
+
+ciphersuites: ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA:ECDHE-RSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA:ECDHE-ECDSA-DES-CBC3-SHA:ECDHE-RSA-DES-CBC3-SHA:EDH-RSA-DES-CBC3-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:DES-CBC3-SHA:!DSS
+
+
+[GCM]
+key: ...
+endpoint: https://gcm-http.googleapis.com/gcm/send
+
+
+[Bugs]
+# CoudhDB endpoint with ACRA
+endpoint: http://127.0.0.1:5984/acra-showme/_design/acra-storage/_update/report/
+# CouchDB bug reporting user
+username: ...
+password: ...
+
+
+[Logging]
+# info level logging contains user information
+# warn contains no user information, but is more verbose and gives an idea of what the server is doing
+# error contains only errors
+logfile: debug.log
+level: warn

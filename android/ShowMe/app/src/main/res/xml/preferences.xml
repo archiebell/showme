@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference
+        android:key="pref_usetor"
+        android:title="@string/pref_tor_title"
+        android:summary="@string/pref_tor_description"
+        android:defaultValue="false" />
+    <CheckBoxPreference
+        android:key="pref_usebuiltincamera"
+        android:title="@string/pref_builtincamera_title"
+        android:summary="@string/pref_builtincamera_description"
+        android:defaultValue="true" />
+    <CheckBoxPreference
+        android:key="pref_privacypleaseicons"
+        android:title="@string/pref_privacypleaseicons_title"
+        android:summary="@string/pref_privacypleaseicons_description"
+        android:defaultValue="true" />
+    <CheckBoxPreference
+        android:key="pref_savesentmessages"
+        android:title="@string/pref_savesentmessages_title"
+        android:summary="@string/pref_savesentmessages_description"
+        android:defaultValue="true" />
+    <CheckBoxPreference
+        android:key="pref_savesentprivatemessages"
+        android:title="@string/pref_saveprivatemessages_title"
+        android:summary="@string/pref_saveprivatemessages_description"
+        android:defaultValue="false" />
+</PreferenceScreen>

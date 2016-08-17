@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.choosemessage.ChooseMessage">
+    <ImageView
+        android:id="@+id/choose_message_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@id/choose_message_image"
+        android:layout_alignBottom="@id/choose_message_image"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".6"
+            tools:ignore="UselessLeaf"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".4"
+            android:orientation="horizontal"
+            android:weightSum="1">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".1"
+                tools:ignore="UselessLeaf"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".8"
+                android:gravity="center">
+                <EditText
+                    android:id="@+id/choose_message_message"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:background="#55000000"
+                    android:padding="15px"
+                    android:textColor="#FFFFFF"
+                    android:text="Check this out!"
+                    tools:ignore="LabelFor" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/choose_message_image"
+        android:layout_alignParentRight="true"
+        android:text="Done"
+        android:onClick="doneWithMessage"
+        tools:ignore="RtlHardcoded" />
+</RelativeLayout>

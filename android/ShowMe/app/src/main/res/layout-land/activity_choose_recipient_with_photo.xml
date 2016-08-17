@@ -1,0 +1,65 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="horizontal"
+    tools:context=".activities.chooserecipient.ChooseRecipient">
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight=".50"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/chooserecipient_button_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/chooserecipient_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text=""
+                android:ellipsize="end"
+                android:scrollHorizontally="true"
+                android:maxLines="1"/>
+            <Button
+                android:id="@+id/chooserecipient_addedit_message"
+                android:layout_height="0dp"
+                android:layout_weight=".50"
+                android:layout_width="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:text="Add Message"
+                android:onClick="chooseMessage"/>
+            <LinearLayout
+                android:layout_height="0dp"
+                android:layout_weight=".50"
+                android:layout_width="match_parent"
+                android:gravity="center">
+                <CheckBox
+                    android:id="@+id/chooserecipient_private_checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Private Photo"
+                    android:textAlignment="center"/>
+            </LinearLayout>
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/chooserecipient_photo_thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/chooserecipient_button_container" />
+    </RelativeLayout>
+    <ListView
+        android:id="@+id/chooserecipient_list_friends"
+        android:layout_width="0dp"
+        android:layout_weight=".50"
+        android:layout_height="match_parent"
+        />
+</LinearLayout>

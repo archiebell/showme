@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/view_phototransient_photo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@id/view_phototransient_photo"
+        android:layout_alignBottom="@id/view_phototransient_photo"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".6"
+            tools:ignore="UselessLeaf"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".4"
+            android:orientation="horizontal"
+            android:weightSum="1">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".1"
+                tools:ignore="UselessLeaf"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".8"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/view_phototransient_message"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:background="#55000000"
+                    android:padding="15px"
+                    android:textColor="#FFFFFF"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/view_phototransient_coverup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignLeft="@+id/view_phototransient_photo"
+        android:layout_alignBottom="@+id/view_phototransient_photo"
+        android:text="Press and hold on the screen."
+        android:gravity="center"
+
+        android:textColor="#000000"
+        android:background="@drawable/countdownbox"
+        tools:ignore="RtlHardcoded" />
+    <TextView
+        android:id="@+id/view_phototransient_countdown"
+        android:layout_width="25pt"
+        android:layout_height="25pt"
+        android:layout_alignLeft="@+id/view_phototransient_photo"
+        android:layout_alignBottom="@+id/view_phototransient_photo"
+        android:layout_margin="30dp"
+        android:text="Hello"
+        android:gravity="center"
+        android:textColor="#000000"
+        android:background="@drawable/countdownbox"
+        tools:ignore="RtlHardcoded" />
+</RelativeLayout>

@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="invalid.showme.activities.draftslist.ChooseDraft">
+
+    <ImageButton android:id="@+id/choosedraft_takephoto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingTop="15dp"
+        android:paddingBottom="10dp"
+        android:src="@drawable/ic_camera_alt_black_48dp"
+        android:onClick="takePhoto"/>
+    <GridView
+        android:id="@+id/choosedraft_list_photos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/choosedraft_takephoto"
+        android:verticalSpacing="0dp"
+        android:horizontalSpacing="0dp"
+        android:stretchMode="columnWidth"
+        android:columnWidth="100dp"
+        android:numColumns="auto_fit" />
+    <LinearLayout
+        android:id="@+id/choosedraft_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="You haven't saved any drafts!"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="If you take a picture, you can 'Save it for Later'."/>
+    </LinearLayout>
+
+</RelativeLayout>
