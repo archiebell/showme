@@ -6,7 +6,7 @@ Besides sending photos (with an optional text caption and optionally marked priv
 
 It uses Axolotl for end-to-end encryption. Friends (and their keys/prekeys) are added via QR scanning; key verification is built-in. A built-in camera is used by default to avoid leaking taken photos to any other application/gallery. Photos are stored encrypted on disk. Tor is supported via Orbot. To prevent *casual* data leakage, private photos auto-delete after 4 hours and request not to be screenshotted.
 
-The server is open source, and intended to be run by individuals, although a central server may be run also.
+The server is open source, and intended to be run by individuals, although a central server may be run also. It is possible to configure the server as an onion service, in which case routing over Tor is required.
 
 # Screenshots
 
@@ -66,6 +66,8 @@ Would be MUCH BETTER to use TLS channel binding, but not supported in Android or
 ### Tor
 
 Option, user can enable on Setup before first network use. Prompts user to install Orbot. Manually sets proxy settings. [Should examine App/ACRA for proxy leaks](https://github.com/archiebell/showme/issues/9).
+
+If server is .onion, Tor required.
 
 ## Deleting
 

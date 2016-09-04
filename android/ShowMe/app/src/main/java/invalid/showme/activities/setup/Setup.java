@@ -29,6 +29,7 @@ import invalid.showme.R;
 import invalid.showme.activities.SharedActivityLogic;
 import invalid.showme.activities.friendslist.FriendsListActivity;
 import invalid.showme.model.UserProfile;
+import invalid.showme.model.server.ServerConfiguration;
 import invalid.showme.model.server.ServerRequestJob;
 import invalid.showme.util.JobPriorityUtil;
 
@@ -48,6 +49,12 @@ public class Setup extends ActionBarActivity implements ActivityCompat.OnRequest
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             Button fillInName = (Button) findViewById(R.id.setup_button_fillinname);
             fillInName.setVisibility(View.GONE);
+        }
+        if(ServerConfiguration.RequiresTor()) {
+            CheckBox tor = (CheckBox)findViewById(R.id.setup_usetor);
+            tor.setChecked(true);
+            tor.setEnabled(false);
+            tor.setText("Use Tor (required by server)");
         }
     }
 

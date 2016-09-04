@@ -7,6 +7,7 @@ import android.preference.PreferenceFragment;
 import info.guardianproject.netcipher.proxy.OrbotHelper;
 import invalid.showme.R;
 import invalid.showme.activities.SharedActivityLogic;
+import invalid.showme.model.server.ServerConfiguration;
 
 public class SettingsFragment extends PreferenceFragment
 {
@@ -16,6 +17,11 @@ public class SettingsFragment extends PreferenceFragment
         addPreferencesFromResource(R.xml.preferences);
 
         Preference torPref = findPreference("pref_usetor");
+        if(ServerConfiguration.RequiresTor()) {
+            torPref.setEnabled(false);
+            torPref.setDefaultValue(true);
+            torPref.setSummary(getString(R.string.pref_tor_description) + "\n(Required by server.)");
+        }
         torPref.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
             @Override
             public boolean onPreferenceChange(Preference preference, Object o) {

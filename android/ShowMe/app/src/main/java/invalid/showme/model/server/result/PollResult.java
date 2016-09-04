@@ -30,6 +30,8 @@ public class PollResult extends ServerResultEvent
     public String getResponseAsString()
     {
         try {
+            if(this.data == null)
+                return "";
             return new String(this.data, "UTF-8");
         } catch(UnsupportedEncodingException e) {
             return "ERROR: Could not decode string. Base64: " + Base64.encodeToString(this.data, 0);

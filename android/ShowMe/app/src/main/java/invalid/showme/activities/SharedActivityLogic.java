@@ -28,6 +28,7 @@ import invalid.showme.exceptions.ExceptionWrapper;
 import invalid.showme.exceptions.NoCameraException;
 import invalid.showme.exceptions.StrangeUsageException;
 import invalid.showme.model.UserProfile;
+import invalid.showme.model.server.ServerConfiguration;
 import invalid.showme.model.server.result.PollResult;
 import invalid.showme.model.server.result.ServerResultEvent;
 import invalid.showme.services.PhotoReceiver;
@@ -54,7 +55,9 @@ public class SharedActivityLogic
 
     //https://github.com/guardianproject/NetCipher/blob/a80e21f8fe334516d399c32f081197e73bc7f051/sample-chboye/src/sample/netcipher/NetCipherSampleActivity.java#L334
     public static void PromptForOrbot(final Context context) {
-        String message = "You must have Orbot installed to use Tor.  ";
+        String message = "You must have Orbot installed to use Tor. ";
+        if(ServerConfiguration.RequiresTor())
+            message += "Tor is required to use the server that is configured in this version of ShowMe. ";
 
         final Intent intent = OrbotHelper.getOrbotInstallIntent(context);
         if (intent.getPackage() == null) {

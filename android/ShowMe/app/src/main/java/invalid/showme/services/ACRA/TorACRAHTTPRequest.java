@@ -123,6 +123,7 @@ public final class TorACRAHTTPRequest {
                 sslContext.init(null, tmf.getTrustManagers(), null);
 
                 httpsUrlConnection.setSSLSocketFactory(sslContext.getSocketFactory());
+                httpsUrlConnection.setHostnameVerifier(ServerInterface.IgnoreHostnameVerifier);
             } catch (GeneralSecurityException e) {
                 ACRA.log.e(TAG, "Could not configure SSL for ACRA request to " + url, e);
             }

@@ -1,5 +1,6 @@
 package invalid.showme.model.server;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -33,10 +34,12 @@ import java.security.cert.X509Certificate;
 import java.util.List;
 import java.util.Map;
 
+import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.KeyManager;
 import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
@@ -64,10 +67,22 @@ public class ServerInterface
     private static X509Certificate certificate;
     private static boolean clientCertificateDirty;
 
-    public static Proxy torProxy = new Proxy(Proxy.Type.SOCKS, new InetSocketAddress("127.0.0.1", 9050));
+    //SOCKS better, but android does not resolve dns through SOCKS?!?!
+    //GP fixed by writing entire HTTP stack and raw SOCKS?? No. HTTP Proxy works.
+    //https://dev.guardianproject.info/issues/2958
+    //https://github.com/square/okhttp/issues/2795
+    public static Proxy torProxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("127.0.0.1", 8118));
     private static KeyStore keyStore;
     private static KeyManager[] keyManagers;
-    private static TrustManager[] PinnedSSLCertificateChecking = new TrustManager[] { new X509TrustManager() {
+    public static HostnameVerifier IgnoreHostnameVerifier = new HostnameVerifier() {
+        @SuppressLint("BadHostnameVerifier")
+        @Override
+        public boolean verify(String s, SSLSession sslSession) {
+            //If pinned, hostname ignored
+            return true;
+        }
+    };
+    public static TrustManager[] PinnedSSLCertificateChecking = new TrustManager[] { new X509TrustManager() {
         public X509Certificate[] getAcceptedIssuers() {
             ACRA.getErrorReporter().handleException(new StrangeUsageException("Somehow wound up in getAcceptedIssuers?"));
             return null;
@@ -205,6 +220,8 @@ public class ServerInterface
             if(urlConnection instanceof HttpsURLConnection) {
                 ((HttpsURLConnection)urlConnection)
                         .setSSLSocketFactory(sslContext.getSocketFactory());
+                ((HttpsURLConnection)urlConnection)
+                        .setHostnameVerifier(ServerInterface.IgnoreHostnameVerifier);
             }
             else {
                 ACRA.getErrorReporter().handleException(new StrangeUsageException("Visiting non-SSL URL: " + request.URL));
